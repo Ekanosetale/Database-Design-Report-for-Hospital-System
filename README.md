@@ -9,15 +9,15 @@ This report outlines the design decisions, processes, and steps involved in crea
 
 The hospital's primary requirements are centered around storing and managing data related to patients, doctors, appointments, medical records, departments, and patient reviews. Key requirements gathered during consultation include:
 
-Patient Registration: Store personal, contact, and insurance information. Optional details include email and phone number. Patients create a secure login for accessing a portal.
+• <ins>*Patient Registration:</ins>* Store personal, contact, and insurance information. Optional details include email and phone number. Patients create a secure login for accessing a portal.
 
-Appointment Management: Patients should be able to book appointments. System checks doctor's availability and logs appointment details including status (pending, completed, or cancelled).
+• <ins>*Appointment Management:</ins>* Patients should be able to book appointments. System checks doctor's availability and logs appointment details including status (pending, completed, or cancelled).
 
-Medical Records: Doctors must be able to access and update the patient’s past diagnoses, medicines, allergies, and appointment history.
+• <ins>*Medical Records:</ins>* Doctors must be able to access and update the patient’s past diagnoses, medicines, allergies, and appointment history.
 
-Reviews: Patients can review doctors after completed appointments.
+• <ins>*Reviews:</ins>* Patients can review doctors after completed appointments.
 
-Retention Policy: If a patient leaves the hospital, their information remains stored with a date of exit noted (to be implemented in future iteration).
+• <ins>*Retention Policy:</ins>* If a patient leaves the hospital, their information remains stored with a date of exit noted (to be implemented in future iteration).
 
 ## Database Design Strategy
 
@@ -134,9 +134,10 @@ The inclusion of PastAppointment helps doctors to track the patient's medical jo
             Review TEXT NOT NULL, 
             ReviewDate DATE NOT NULL
             );
+            
+Captures qualitative feedback from patients.
 
-
-The Review column captures feedback, and the ReviewDate records when the feedback was provided.
+Helps improve transparency and accountability.
 
 **Appointment Date Validation:**
 To ensure that appointments are not scheduled in the past, the following constraint is added:
@@ -144,10 +145,16 @@ To ensure that appointments are not scheduled in the past, the following constra
 
        ADD CONSTRAINT chk_AppointmentDate CHECK (AppointmentDate >= GETDATE());
 
-![](ERD.pg)
+![](ERD.png)
 
 ### Conclusion
-The hospital database design fulfills all identified business needs including patient management, appointment scheduling, medical history tracking, and doctor reviews. It promotes efficient record-keeping, enhances patient engagement via the portal, and supports decision-making by healthcare professionals. With added features and role-based security, this system can scale to meet broader clinical requirements in the future.
+The hospital database design is robust, secure, and flexible to meet current and future needs. Each design choice—from table structure to constraints—was guided by the client’s requirements and best practices in relational database design. The system supports patient engagement, efficient doctor workflow, and scalable operations.
+
+This foundational work sets the stage for deployment and future integration with hospital web and mobile systems.
+
+**Prepared by:** **<ins>Victory E. Idewele</ins**
+
+**Database Developer Consultant**
 
 
 
