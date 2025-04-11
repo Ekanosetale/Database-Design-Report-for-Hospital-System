@@ -145,6 +145,11 @@ To ensure that appointments are not scheduled in the past, the following constra
 
        ADD CONSTRAINT chk_AppointmentDate CHECK (AppointmentDate >= GETDATE());
 
+# Entity-Relationship Diagram.
+
+The ERD (Entity-Relationship Diagram) included in the report visually outlines the structure of the hospital database. It depicts key entities—such as Patient, Doctor, Appointment, Medical Record, Department, and Review—and clearly illustrates how these entities are related. For example, it shows that a patient can have multiple appointments, a doctor can belong to a department and manage several appointments, and that patients can write reviews for doctors. This diagram serves as a blueprint that aids in understanding the data flow and relationships within the system, ensuring accurate database design and facilitating future modifications or expansions.
+       
+
 ![](ERD.png)
 
 ### Conclusion
