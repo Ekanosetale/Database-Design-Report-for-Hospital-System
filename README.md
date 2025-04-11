@@ -144,6 +144,7 @@ To ensure that appointments are not scheduled in the past, the following constra
 
        ADD CONSTRAINT chk_AppointmentDate CHECK (AppointmentDate >= GETDATE());
 
+![](ERD.pg)
 
 ### Conclusion
 The hospital database design fulfills all identified business needs including patient management, appointment scheduling, medical history tracking, and doctor reviews. It promotes efficient record-keeping, enhances patient engagement via the portal, and supports decision-making by healthcare professionals. With added features and role-based security, this system can scale to meet broader clinical requirements in the future.
