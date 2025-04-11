@@ -34,27 +34,29 @@ Appointment: Manages appointment details between patients and doctors, including
 Medical Record: Contains a record of a patient's medical history, including diagnoses, prescribed medicines, allergies, and past appointments.
 
 -- CREATE THE DATABASE
-*CREATE DATABASE HospitalDB;*
+
+          *CREATE DATABASE HospitalDB;*
 
 -- SWITCH TO THE NEW DATABASE
-*USE HospitalDB;*
+
+          *USE HospitalDB;*
 
 
 ### Patient Table
 The Patient table stores all the essential information related to the patient. The columns include PatientID (primary key), FullName, Gender, Address, DateOfBirth, InsuranceID, EmailAddress, PhoneNumber, UserName, and Password. The Password column is restricted to 8 characters to ensure proper security.
 
-*CREATE TABLE Patient*(
-    PatientID INT PRIMARY KEY IDENTITY(1,1),
-    FullName VARCHAR(50),
-    Gender CHAR(1),
-    Address TEXT,
-    DateOfBirth DATE NOT NULL,
-    InsuranceID VARCHAR(50) NOT NULL,
-    EmailAddress VARCHAR(50),
-    PhoneNumber VARCHAR(50),
-    UserName VARCHAR(50) NOT NULL,
-    Password CHAR(8) CHECK(LEN(Password) >= 8) NOT NULL
-);
+           *CREATE TABLE Patient*(
+                 PatientID INT PRIMARY KEY IDENTITY(1,1),
+                 FullName VARCHAR(50),
+                 Gender CHAR(1),
+                 Address TEXT,
+                 DateOfBirth DATE NOT NULL,
+                 InsuranceID VARCHAR(50) NOT NULL,
+                 EmailAddress VARCHAR(50),
+                 PhoneNumber VARCHAR(50),
+                 UserName VARCHAR(50) NOT NULL,
+                 Password CHAR(8) CHECK(LEN(Password) >= 8) NOT NULL
+         );
 
 *Justification:*
 The PatientID is auto-incremented to ensure uniqueness.
