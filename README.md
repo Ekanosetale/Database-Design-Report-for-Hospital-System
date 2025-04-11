@@ -59,6 +59,7 @@ The Patient table stores all the essential information related to the patient. T
          );
 
 *Justification:*
+
 The PatientID is auto-incremented to ensure uniqueness.
 
 EmailAddress and PhoneNumber are optional to accommodate diverse patient preferences.
@@ -66,13 +67,14 @@ EmailAddress and PhoneNumber are optional to accommodate diverse patient prefere
 Password length constraint enforces security policies.
 
 **Department Table**
+
 The Department table stores information about different hospital departments.
 
-*CREATE TABLE Department*(
-    DepartmentID INT PRIMARY KEY IDENTITY(1,1),
-    DepartmentName VARCHAR(50) NOT NULL,
-    HeadOfDepartment VARCHAR(50) NOT NULL,
-    PhoneNumber VARCHAR(20) NOT NULL
+       *CREATE TABLE Department*(
+           DepartmentID INT PRIMARY KEY IDENTITY(1,1),
+           DepartmentName VARCHAR(50) NOT NULL,
+           HeadOfDepartment VARCHAR(50) NOT NULL,
+           PhoneNumber VARCHAR(20) NOT NULL
 );
 
 *Justification:*
