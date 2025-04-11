@@ -138,10 +138,9 @@ The inclusion of PastAppointment helps doctors to track the patient's medical jo
 
 The Review column captures feedback, and the ReviewDate records when the feedback was provided.
 
-*Appointment Date Validation*
+**Appointment Date Validation:**
 To ensure that appointments are not scheduled in the past, the following constraint is added:
 
-**ALTER TABLE Appointment**
 
        ADD CONSTRAINT chk_AppointmentDate CHECK (AppointmentDate >= GETDATE());
 
